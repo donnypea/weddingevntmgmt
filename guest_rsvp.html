@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSVP - Wedding Event</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        /* Sidebar Styling */
+        .sidebar {
+            background-color: #D8C3A5;
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding-top: 20px;
+        }
+
+        /* Sidebar Links */
+        .nav-link {
+            font-size: 18px;
+            padding: 10px;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: #BFA58A;
+            border-radius: 5px;
+        }
+
+        .nav-link.active {
+            background-color: #BFA58A;
+            color: #fff;
+        }
+
+        /* Main Content */
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        /* RSVP Card */
+        .rsvp-card {
+            background-color: #FAF3E0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* RSVP Button */
+        .rsvp-btn {
+            background-color: #5D4037;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="d-flex">
+        <div class="sidebar p-3">
+            <h4 class="text-center"><i class="bi bi-gem"></i> Wedding Event</h4>
+            <hr>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a href="guest_dashboard.html" class="nav-link active"><i class="bi bi-house-door"></i> Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="guest_profile.html" class="nav-link"><i class="bi bi-person"></i> Profile</a>
+                </li>
+                <li class="nav-item mt-3">
+                    <a href="login.html" class="nav-link text-danger"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content p-4">
+            <div class="container">
+                <h2><i class="bi bi-check-circle"></i> RSVP Confirmation</h2>
+
+                <div class="rsvp-card mt-4">
+                    <h4><i class="bi bi-balloon-heart"></i> John & Jane's Wedding</h4>
+                    <p><strong>Date:</strong> <i class="bi bi-calendar3"></i> December 25, 2025</p>
+                    <p><strong>Time:</strong> <i class="bi bi-clock"></i> 5:00 PM - 10:00 PM</p>
+                    <p><strong>Location:</strong> <i class="bi bi-geo-alt"></i> Grand Hall, Manila</p>
+
+                    <form action="#" method="POST">
+                        <div class="mb-3">
+                            <label for="rsvp_status" class="form-label"><strong>Will you be attending?</strong></label>
+                            <select class="form-select" id="rsvp_status" name="rsvp_status">
+                                <option value="yes">Yes, I will attend</option>
+                                <option value="no">No, I can't attend</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="guest_message" class="form-label"><strong>Message (Optional)</strong></label>
+                            <textarea class="form-control" id="guest_message" name="guest_message" rows="3" placeholder="Leave a note for the couple..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn rsvp-btn"><i class="bi bi-send"></i> Submit RSVP</button>
+                        <a href="guest_event_details.html" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Back</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-3 mt-auto" style="background-color: #5D4037; color: #fff; position: fixed; width: 100%; bottom: 0;">
+        <p><i class="bi bi-heart-fill"></i> &copy; 2025 Wedding Event Management. All rights reserved.</p>
+    </footer>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

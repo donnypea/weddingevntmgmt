@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Profile - Wedding Event</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        /* Sidebar Styling */
+        .sidebar {
+            background-color: #D8C3A5;
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding-top: 20px;
+        }
+
+        /* Sidebar Links */
+        .nav-link {
+            font-size: 18px;
+            padding: 10px;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: #BFA58A;
+            border-radius: 5px;
+        }
+
+        .nav-link.active {
+            background-color: #BFA58A;
+            color: #fff;
+        }
+
+
+
+        /* Profile Card */
+        .profile-card {
+            background-color: #FAF3E0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #5D4037;
+        }
+
+        /* Edit Profile Button */
+        .edit-btn {
+            background-color: #5D4037;
+            color: white;
+        }
+
+        /* Footer (Sticky at Bottom) */
+/* Content Styling */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    min-height: 100vh; /* Ensure content takes full height */
+    padding-bottom: 80px; /* Space for footer */
+}
+
+/* Footer (Sticky at Bottom) */
+footer {
+    background-color: #5D4037;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    position: relative; /* Remove fixed position */
+}
+
+        
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="d-flex">
+        <div class="sidebar p-3">
+            <h4 class="text-center"><i class="bi bi-gem"></i> Wedding Event</h4>
+            <hr>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a href="guest_dashboard.html" class="nav-link active"><i class="bi bi-house-door"></i> Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="guest_profile.html" class="nav-link"><i class="bi bi-person"></i> Profile</a>
+                </li>
+                <li class="nav-item mt-3">
+                    <a href="login.html" class="nav-link text-danger"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Main Content -->
+        <div class="content p-4">
+            <div class="container">
+                <h2><i class="bi bi-person-circle"></i> My Profile</h2>
+            
+                <div class="row mt-4">
+                    <!-- Profile Section (Left Side) -->
+                    <div class="col-md-6">
+                        <div class="profile-card">
+                            <img src="assets/images/boy.jpg" alt="Profile Picture" class="profile-pic">
+                            <h4 class="mt-3">John Doe</h4>
+                            <p><i class="bi bi-envelope"></i> johndoe@example.com</p>
+                            <p><i class="bi bi-phone"></i> +63 912 345 6789</p>
+                            <button class="btn edit-btn" data-bs-toggle="modal" data-bs-target="#editProfileModal">
+                                <i class="bi bi-pencil"></i> Edit Profile
+                            </button>
+                        </div>
+                    </div>
+            
+                    <!-- RSVP History Section (Right Side) -->
+                    <div class="col-md-6">
+                        <h4><i class="bi bi-clock-history"></i> RSVP History</h4>
+                        <ul class="list-group mt-3">
+                            <li class="list-group-item">
+                                <strong>John & Jane's Wedding</strong> - <span class="text-success">Attending</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Anna & Mark's Engagement</strong> - <span class="text-danger">Not Attending</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProfileModalLabel"><i class="bi bi-pencil"></i> Edit Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="profilePic" class="form-label">Profile Picture</label>
+                            <input type="file" class="form-control" id="profilePic">
+                        </div>
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" value="John Doe">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" value="johndoe@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="text" class="form-control" id="phone" value="+63 912 345 6789">
+                        </div>
+                        <button type="submit" class="btn edit-btn"><i class="bi bi-save"></i> Save Changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-3 mt-auto" style="background-color: #5D4037; color: #fff; position: fixed; width: 100%; bottom: 0;">
+        <p><i class="bi bi-heart-fill"></i> &copy; 2025 Wedding Event Management. All rights reserved.</p>
+    </footer>
+
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

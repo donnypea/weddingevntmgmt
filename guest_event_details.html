@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details - Wedding Event</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        /* Sidebar Styling */
+        .sidebar {
+            background-color: #D8C3A5;
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding-top: 20px;
+        }
+
+        /* Sidebar Links */
+        .nav-link {
+            font-size: 18px;
+            padding: 10px;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: #BFA58A;
+            border-radius: 5px;
+        }
+
+        .nav-link.active {
+            background-color: #BFA58A;
+            color: #fff;
+        }
+
+        /* Main Content */
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        /* Event Image */
+        .event-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Event Details */
+        .event-card {
+            background-color: #FAF3E0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* RSVP Button */
+        .rsvp-btn {
+            background-color: #5D4037;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="d-flex">
+        <div class="sidebar p-3">
+            <h4 class="text-center"><i class="bi bi-gem"></i> Wedding Event</h4>
+            <hr>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a href="guest_dashboard.html" class="nav-link active"><i class="bi bi-house-door"></i> Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="guest_profile.html" class="nav-link"><i class="bi bi-person"></i> Profile</a>
+                </li>
+                <li class="nav-item mt-3">
+                    <a href="login.html" class="nav-link text-danger"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content p-4">
+            <div class="container">
+                <h2><i class="bi bi-calendar-event"></i> Event Details</h2>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <img src="assets/images/wedding event.jpg" alt="Event Image" class="event-image">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="event-card">
+                            <h3><i class="bi bi-balloon-heart"></i> John & Jane's Wedding</h3>
+                            <p><strong>Date:</strong> <i class="bi bi-calendar3"></i> December 25, 2025</p>
+                            <p><strong>Time:</strong> <i class="bi bi-clock"></i> 5:00 PM - 10:00 PM</p>
+                            <p><strong>Location:</strong> <i class="bi bi-geo-alt"></i> Grand Hall, Manila</p>
+                            <p><strong>Description:</strong> Join us for a magical wedding celebration with music, love, and memories.</p>
+                            <p><strong>Organizer:</strong> <i class="bi bi-person"></i> Wedding Planner Inc.</p>
+                            
+                            <a href="guest_rsvp.html"><button class="btn rsvp-btn"><i class="bi bi-check-circle"></i> RSVP Now</button></a>
+                            <a href="guest_dashboard.html" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-3 mt-auto" style="background-color: #5D4037; color: #fff; position: fixed; width: 100%; bottom: 0;">
+        <p><i class="bi bi-heart-fill"></i> &copy; 2025 Wedding Event Management. All rights reserved.</p>
+    </footer>
+
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

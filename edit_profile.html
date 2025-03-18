@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile - Wedding Event</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css"> <!-- External CSS file -->
+    <style>
+           /* Sidebar Styling */
+           .sidebar {
+            background-color: #D8C3A5; /* Almond */
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding-top: 20px;
+        }
+
+        /* Sidebar Links */
+        .nav-link {
+            font-size: 18px;
+            padding: 10px;
+            display: block;
+            transition: 0.3s;
+        }
+
+        
+        .nav-link:hover {
+            background-color: #BFA58A; /* Light Chai */
+            border-radius: 5px;
+        }
+
+        /* Active Link */
+        .nav-link.active {
+            background-color: #BFA58A;
+            color: #fff;
+        }
+
+
+        /* Form Styling */
+.card {
+    border: 2px solid #BFA58A; /* Light Chai */
+    background-color: #FAF3E0; /* Vanilla */
+}
+
+/* Button Styles */
+.btn-success {
+    background-color: #6D9773; /* Matcha */
+    border: none;
+}
+
+.btn-secondary {
+    background-color: #BFA58A; /* Almond */
+    border: none;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="d-flex">
+        <div class="sidebar p-3">
+            <h4 class="text-center"><i class="bi bi-gem"></i> Wedding Event</h4>
+            <hr>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a href="guest_dashboard.html" class="nav-link active"><i class="bi bi-house-door"></i> Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="guest_profile.html" class="nav-link"><i class="bi bi-person"></i> Profile</a>
+                </li>
+                <li class="nav-item mt-3">
+                    <a href="login.html" class="nav-link text-danger"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content p-4" style="margin-left: 250px; width: 100%;">
+            <div class="container">
+                <h2><i class="bi bi-pencil"></i> Edit Profile</h2>
+
+                <div class="card p-4 mt-4 shadow-sm">
+                    <form action="update_profile.php" method="POST">
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-person"></i> Full Name</label>
+                            <input type="text" name="full_name" class="form-control" value="John Doe" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-envelope"></i> Email</label>
+                            <input type="email" name="email" class="form-control" value="johndoe@example.com" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-telephone"></i> Phone</label>
+                            <input type="text" name="phone" class="form-control" value="+123 456 7890" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label"><i class="bi bi-image"></i> Profile Picture</label>
+                            <input type="file" name="profile_picture" class="form-control">
+                        </div>
+
+                        <button type="submit" class="btn btn-success"><i class="bi bi-save"></i> Save Changes</button>
+                        <a href="guest_profile.html" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-3 mt-auto" style="background-color: #5D4037; color: #fff; position: fixed; width: 100%; bottom: 0;">
+        <p><i class="bi bi-heart-fill"></i> &copy; 2025 Wedding Event Management. All rights reserved.</p>
+    </footer>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

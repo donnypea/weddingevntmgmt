@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Dashboard - Wedding Event</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css"> <!-- External CSS file -->
+    <style>
+        /* Sidebar Styling */
+        .sidebar {
+            background-color: #D8C3A5; /* Almond */
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding-top: 20px;
+        }
+
+        /* Sidebar Links */
+        .nav-link {
+            font-size: 18px;
+            padding: 10px;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: #BFA58A; /* Light Chai */
+            border-radius: 5px;
+        }
+
+        /* Active Link */
+        .nav-link.active {
+            background-color: #BFA58A;
+            color: #fff;
+        }
+
+        /* Main Content Styling */
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            width: 100%;
+        }
+
+        /* Search and Filter */
+        .search-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-container input,
+        .search-container select {
+            flex: 1;
+        }
+
+        /* Card Styling */
+        .event-card {
+            background-color: #FAF3E0; /* Vanilla */
+            border: none;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .event-card:hover {
+            transform: scale(1.02);
+        }
+
+        .event-date {
+            font-size: 14px;
+            color: #5D4037; /* Carob */
+        }
+
+        .event-location {
+            font-size: 14px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- Sidebar -->
+    <div class="d-flex">
+        <div class="sidebar p-3">
+            <h4 class="text-center"><i class="bi bi-gem"></i> Wedding Event</h4>
+            <hr>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a href="guest_dashboard.html" class="nav-link active"><i class="bi bi-house-door"></i> Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="guest_profile.html" class="nav-link"><i class="bi bi-person"></i> Profile</a>
+                </li>
+                <li class="nav-item mt-3">
+                    <a href="login.html" class="nav-link text-danger"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content p-4">
+            <div class="container">
+                <h2><i class="bi bi-house-door"></i> Guest Dashboard</h2>
+                <p>Welcome to the Wedding Event Management System!</p>
+
+                <!-- Search & Filter Section -->
+                <div class="mt-4">
+                    <h4><i class="bi bi-search"></i> Search Events</h4>
+                    <div class="search-container mt-2">
+                        <input type="text" id="searchEvent" class="form-control" placeholder="Search events...">
+                        <select id="filterEvent" class="form-select">
+                            <option value="all">All Events</option>
+                            <option value="wedding">Weddings</option>
+                            <option value="engagement">Engagements</option>
+                            <option value="reception">Receptions</option>
+                        </select>
+                        <button class="btn btn-primary"><i class="bi bi-funnel"></i> Filter</button>
+                    </div>
+                </div>
+
+                <!-- Upcoming Events - Cards -->
+                <div class="mt-4">
+                    <h4><i class="bi bi-calendar-event"></i> Upcoming Events</h4>
+                    <div class="row mt-3">
+                        <!-- Event 1 -->
+                        <div class="col-md-4">
+                            <div class="card event-card p-3">
+                                <h5><i class="bi bi-balloon-heart"></i> Gayle & Johnna's Wedding</h5>
+                                <p class="event-date"><i class="bi bi-calendar3"></i> December 25, 2025</p>
+                                <p class="event-location"><i class="bi bi-geo-alt"></i> Grand Hall, Manila</p>
+                                <a href="guest_event_details.html" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i> View Details</a>
+                            </div>
+                        </div>
+
+                        <!-- Event 2 -->
+                        <div class="col-md-4">
+                            <div class="card event-card p-3">
+                                <h5><i class="bi bi-balloon-heart"></i> Anna & Mark's Engagement</h5>
+                                <p class="event-date"><i class="bi bi-calendar3"></i> January 10, 2026</p>
+                                <p class="event-location"><i class="bi bi-geo-alt"></i> Beach Resort, Cebu</p>
+                                <a href="guest_event_details.html" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i> View Details</a>
+                            </div>
+                        </div>
+                        
+                    </div> <!-- End row -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-3 mt-auto" style="background-color: #5D4037; color: #fff; position: fixed; width: 100%; bottom: 0;">
+        <p><i class="bi bi-heart-fill"></i> &copy; 2025 Wedding Event Management. All rights reserved.</p>
+    </footer>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Login - Wedding Event</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/login.css"> <!-- External CSS file -->
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #D8C3A5;">
+        <div class="container">
+            <a class="navbar-brand" href="index.php"><i class="bi bi-gem"></i> Wedding Event</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Login Form -->
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+        <div class="card p-4 shadow-sm" style="width: 350px;">
+            <h3 class="text-center"><i class="bi bi-person-circle"></i> Login</h3>
+            <form id="loginForm">
+                <div class="mb-3">
+                    <label class="form-label">Email Address</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                        <input type="password" id="password" class="form-control" required>
+                    </div>
+                </div>
+
+                <div id="errorMessage" class="text-danger text-center mb-3" style="display: none;">Invalid email or password!</div>
+
+                <button type="submit" class="btn btn-dark w-100 mt-3"><i class="bi bi-box-arrow-in-right"></i> Login</button>
+            </form>
+            <hr>
+            <p class="text-center">Don't have an account? <a href="register.html">Register here</a></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-3 mt-auto" style="background-color: #5D4037; color: #fff;">
+        <p><i class="bi bi-heart-fill"></i> &copy; 2025 Wedding Event Management. All rights reserved.</p>
+    </footer>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get user input
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let errorMessage = document.getElementById("errorMessage");
+
+            // Hardcoded users
+            const users = [
+                { email: "guest@example.com", password: "guest123", role: "guest" },
+                { email: "organizer@example.com", password: "organizer123", role: "organizer" }
+            ];
+
+            // Check if credentials match
+            let user = users.find(user => user.email === email && user.password === password);
+
+            if (user) {
+                errorMessage.style.display = "none"; // Hide error message
+
+                // Redirect based on role
+                if (user.role === "guest") {
+                    window.location.href = "guest_dashboard.html";
+                } else if (user.role === "organizer") {
+                    window.location.href = "organizer/organizer_dashboard.html";
+                }
+            } else {
+                errorMessage.style.display = "block"; // Show error message
+            }
+        });
+    </script>
+
+</body>
+</html>
